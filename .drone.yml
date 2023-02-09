@@ -1,10 +1,18 @@
 kind: pipeline
 type: docker
-name: default
-
+name: build
 steps:
 - name: greeting
   image: alpine
   commands:
   - echo hello
   - echo world
+---
+kind: pipeline
+type: docker
+name: deploy
+steps:
+- name: greeting
+  image: alpine
+  commands:
+  - echo deploying
